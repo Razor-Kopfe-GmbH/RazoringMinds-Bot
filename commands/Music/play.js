@@ -60,7 +60,7 @@ module.exports.run = async (bot, message, args, premiumStatus) => {
         if (!args[0]) {
             message.channel.send("Invalid search query.")
         }
-        if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
+        if (url.match(/^https?:\/\/(((www|beta)\.)?youtube\.com|youtube\.com)\/playlist(.*)$/)) {
             
             const playlist = await youtube.getPlaylist(url);
 
