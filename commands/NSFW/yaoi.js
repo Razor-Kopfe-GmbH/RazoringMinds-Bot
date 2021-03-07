@@ -15,20 +15,38 @@
 
 const {MessageEmbed} = require('discord.js');
 const lang = require("../../lang.json");
-const tnai = require('tnai');
+const redditimage = require('reddit.images');
+const subredditCategory = [
+    "yaoi"
+]
 
 module.exports.run = async (bot, message, args) => {
     if (message.channel.nsfw === true) {
-        const cli = new tnai();
-        const yaoiimg = await cli.hentai.yaoi();
-        const embodpa = new MessageEmbed()
-            .setColor(0x00008B)
-            .setTitle("Click here to get image")
-            .setURL(yaoiimg)
-            .setImage(yaoiimg)
-            .setTimestamp()
-            .setFooter(`Bot by Ca$ey#0001 • Requested by ${message.member.user.username}`, bot.user.avatarURL);
-        message.channel.send(embodpa)  
+        let subreddit = subredditCategory[Math.floor(Math.random() * subredditCategory.length)];
+        try {
+            await redditimage.fetch({
+                type: "custom",
+                total: 1,
+                subreddit: [subreddit],
+            }).then((result) => {
+                    const embodpa = new MessageEmbed()
+                    .setColor(0x00008B)
+                    .setTitle(`${result[0].title}`)
+                    .setURL(`${result[0].postLink}`)
+                    .setImage(`${result[0].image}`)
+                    .setTimestamp()
+                    .setFooter(`Bot by RoccoAWD#0001 • Upvotes: ${result[0].upvotes} Downvotes: ${result[0].downvotes}`, bot.user.avatarURL);
+                message.channel.send(embodpa)  
+            });
+        } catch(err) {
+                const richnewembedI = new MessageEmbed()
+                .setColor("0x00008B")
+                .setTitle("Unknown unexplained error.")
+                .addField(`Error: ${err}`, "Error UNKNOWN-ERR-50147")
+                .addField("If you believe this is in error, let us know.", `Please join our support server ${lang["en_US"].support_server}`)
+            message.channel.send(richnewembedI)
+          }
+
     } else {
             const richnewembed = new MessageEmbed()
                 .setColor("0x00008B")
