@@ -11,7 +11,7 @@
 //                                         \______/       
 // © 2019 Casey Media, L.L.C. in partnership with Razor Köpfe GmbH (RazoringMinds GmbH).
 // All bot code or snippets is © 2019 Casey Maxwell AG. All Rights Reserved.
-// RazoringMinds is created by Casey Maxwell (Ca$ey#0001). View the license!
+// RazoringMinds is created by Casey Maxwell (Radar#0001). View the license!
 
 const {MessageEmbed} = require('discord.js');
 const Endb = require('endb');
@@ -55,6 +55,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.help = {
     name: "bal",
+    aliases: [],
     description: "Get balance.",
     usage: "bal",
     type: "Utility"
