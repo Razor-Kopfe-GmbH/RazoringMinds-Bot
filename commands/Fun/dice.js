@@ -11,7 +11,7 @@
 //                                         \______/       
 // © 2019 Casey Media, L.L.C. in partnership with Razor Köpfe GmbH (RazoringMinds GmbH).
 // All bot code or snippets is © 2019 Casey Maxwell AG. All Rights Reserved.
-// RazoringMinds is created by Casey Maxwell (Ca$ey#0001). View the license!
+// RazoringMinds is created by Casey Maxwell (Radar#0001). View the license!
 
 module.exports.run = async (bot, message, args) => {
     const i_maked = ["1", "2", "3", "4", "5", "6"]
@@ -20,6 +20,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.help = {
     name: "dice",
+    aliases: [],
     description: "Roll a dice.",
     usage: "dice",
     type: "Utility"
