@@ -11,7 +11,7 @@
 //                                         \______/       
 // © 2019 Casey Media, L.L.C. in partnership with Razor Köpfe GmbH (RazoringMinds GmbH).
 // All bot code or snippets is © 2019 Casey Maxwell AG. All Rights Reserved.
-// RazoringMinds is created by Casey Maxwell (Ca$ey#0001). View the license!
+// RazoringMinds is created by Casey Maxwell (Radar#0001). View the license!
 
 const {MessageEmbed} = require('discord.js');
 const lang = require("../../lang.json");
@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args) => {
                     .setURL(`${result[0].postLink}`)
                     .setImage(`${result[0].image}`)
                     .setTimestamp()
-                    .setFooter(`Bot by RoccoAWD#0001 • Upvotes: ${result[0].upvotes} Downvotes: ${result[0].downvotes}`, bot.user.avatarURL);
+                    .setFooter(`Bot by Radar#0001 • Upvotes: ${result[0].upvotes} Downvotes: ${result[0].downvotes}`, bot.user.avatarURL);
                 message.channel.send(embodpa)  
             });
         } catch(err) {
@@ -59,6 +59,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.help = {
     name: "yaoi",
+    aliases: [],
     description: "18+ Command.",
     usage: "yaoi",
     type: "Utility"
