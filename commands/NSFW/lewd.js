@@ -11,7 +11,7 @@
 //                                         \______/       
 // © 2019 Casey Media, L.L.C. in partnership with Razor Köpfe GmbH (RazoringMinds GmbH).
 // All bot code or snippets is © 2019 Casey Maxwell AG. All Rights Reserved.
-// RazoringMinds is created by Casey Maxwell (Ca$ey#0001). View the license!
+// RazoringMinds is created by Casey Maxwell (Radar#0001). View the license!
 
 const superagent = require('superagent');
 const {MessageEmbed} = require('discord.js');
@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
                     .setColor(0x00008b)
                     .setTitle("Click here to get image")
                     .setImage(response.body.message)
-                    .setFooter(`Bot by Ca$ey#0001 • Requested by ${message.member.user.username}`, bot.user.avatarURL)
+                    .setFooter(`Bot by Radar#0001 • Requested by ${message.member.user.username}`, bot.user.avatarURL)
                     .setTimestamp();
                 lewdembed.url = lewdembed.image.url
                 message.channel.send(lewdembed)
@@ -45,6 +45,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.help = {
     name: "lewd",
+    aliases: [],
     description: "18+ Command.",
     usage: "lewd",
     type: "Utility"
